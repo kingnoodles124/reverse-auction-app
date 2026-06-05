@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "reverseauctionbot-kvsn",
+  "private_key_id": "e631e2f7d1747a4b18a8e874029d6bc89a186eae",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDTiGH4Boy18PmB\nviE4/7A8ne+LJY9KbTlXQNShjeQnTV2Rw+TxjHNf88XT/zCMzqo2yOQyCfo9b+td\nQvXaODPmNjIx5U2sb1ykYZ5u4ef/lHZXC8FhgdvZ7ROZC1Khi2zRSW5hi63wuaIG\n2Itlgjn1SdCdvjbr+IOGOg6f0ZRKQrQuj6L2qF1yx8om77ums7o2I9FTd+Ezdqkh\najf9THZJhqI73bxBmLvi15opGJRiLNrzOvJoocO8hwOKk9ig+an6K/c22bAOMO9t\n/jOMIqPk27MZ59hafKvOSQXN5UwOHSJuldqMXWWtsmI4r6dpJ30GPihFZbSnfHh8\nZJMksb3DAgMBAAECggEACJEyGMtVViYxEFGIY0MXVzxDZXHtCkBbqDkQWOLp5EFh\n1e//bQd17I39jxb7Zaz5v70NRPDhuxBESqpkUeUvKc904xbHVfN2PCHkrGVRwCiP\nhxZuvW0vtQOIOina2GLfC1KtMrqDyKsQeAotfHTtmXE6ZAoFUt4QLg+vx5vRwU2u\nMlMun8IUvfgJuwA1x7uXBF3QT5r/FqbsGcigfLwY5dwk25C/yS0aTeGUAldx45z9\n/Hnfzj4ldcCw1X3NCxLt7yIh3CXjidnaDIf0U2dGSrLwUt+n+VVROrT8GOiBCwN4\n+etUaRUHB6vqhFZDiYSdBKIycxOyN09ApwXIesgcYQKBgQD2kf9DRp3z1zMMLMKb\ngj0lmYnSsoza7qgFtGDOE03PSlzRG5qtUTbH7HS6CK+R28FYbjmibMdVq6g+OcG8\n1H8C1S40UdBJDY4MrGnBGJxP6DOIAqO7jZLZ0B1n1fV7DK2z0o5rE4T6dknArNGP\nGvRW9Kpn9B2buxhc4JzexW7FYQKBgQDbn1tItkTCHDBfvmUY51Pgwv5U7j1iFs+l\n7Kc0FSLqK+1jI5GBpPcykysnuGJ41aBB4YdDKpZDs+lvnV8V5pOJJgC/Gc6t/JBb\nH7v7sG1nejRoMViz6gdWjDUAixy0/bh0eJpj+JjLjeKOLcK/e1QOMgQ73M0ZCQ4j\nhdrnI/KxowKBgFEbmXJR6mdppLsehi2NW/vgU7vhTABAfTjTKvze0LudZIbMo8bb\nbj+5gnQno0lBloo2R/MsAS4nN0Kw0RACfn06Duba+r7tHIsCtA72v4Rxh3H4HE/3\ntBS+Js4fTY7ajtEWNA747sdM3dnpf02pujJYbS2g2ZR+qPb0U+Xb4CJBAoGAXOBY\nVziVfU00e9jlohF53Ew6CCq0FL421CFvWEwz9rna6xkImL3tuBqannKQWi9lVVcN\nv67L2xfDeWsg4f8fl1lV6Xr9d4Cef5q9AaRLr/3zGbj8nSE0NzqV04QBAN1nWwIB\nsJNZ8oMvMxdRC28ZTeOC/NnUdmjo7MbXmvYN1WcCgYBXssiK4ypC7ExSVLaiTBLk\nBjMC6iitc6s2x2hj3X5aVP7rt+WpmMKEAxu93RseyQvQqA9v5NHsV9l+7vlx1PHW\nWswDESB8rxPymVoPks9vHTw56lhLtW9I3RYNIDq53jMNrcO0XM779HtQR2GX4oKG\nG4XgDZ/s+5S5eU0ZRgR+Zg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "reverseauctionbot@reverseauctionbot-kvsn.iam.gserviceaccount.com",
+  "client_id": "117541583515972401133",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/reverseauctionbot%40reverseauctionbot-kvsn.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
