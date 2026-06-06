@@ -137,30 +137,64 @@ app.post('/verify-account', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
+
     const { username, password } = req.body;
 
-    const sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+    const sql = `
+        SELECT *
+        FROM users
+        WHERE username = ?
+        AND password = ?
+    `;
 
-    db.query(sql, [username, password], (err, result) => {
-        if (err) {
-            console.log(err);
-            return res.status(500).send("Login error");
-        }
+    db.query(
+        sql, [username, password],
+        (err, result) => {
 
-        if (result.length > 0) {
-            if (!result[0].verified) {
-                return res.status(403).json({
-                    message: 'Please verify your account first'
-                });
+            if (err) {
+                console.log(err);
+
+                return res
+                    .status(500)
+                    .json({
+                        message: 'Login error'
+                    });
             }
+
+            if (result.length === 0) {
+
+                return res
+                    .status(401)
+                    .json({
+                        message: 'Invalid username or password'
+                    });
+            }
+
+            console.log(
+                'VERIFIED VALUE:',
+                result[0].verified,
+                typeof result[0].verified
+            );
+
+            if (
+                Number(result[0].verified) !== 1
+            ) {
+
+                return res
+                    .status(403)
+                    .json({
+                        message: 'Please verify your account first'
+                    });
+            }
+
             res.json({
-                message: "Login successful",
+                message: 'Login successful',
                 user: result[0]
             });
-        } else {
-            res.status(401).send("Invalid username or password");
+
         }
-    });
+    );
+
 });
 
 app.post('/create-request', (req, res) => {
