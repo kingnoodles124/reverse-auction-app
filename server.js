@@ -42,14 +42,34 @@ app.get('/', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
+
     const {
         username,
         password,
         role,
         category,
+        email
     } = req.body;
 
-    const sql = "INSERT INTO users (username, password, role, category) VALUES (?, ?, ?, ?)";
+    const verificationCode =
+        Math.floor(
+            100000 +
+            Math.random() * 900000
+        ).toString();
+
+    const sql = `
+      INSERT INTO users
+      (
+        username,
+        password,
+        role,
+        category,
+        email,
+        verified,
+        verification_code
+      )
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `;
 
     db.query(
         sql, [
@@ -57,14 +77,28 @@ app.post('/register', (req, res) => {
             password,
             role,
             category,
-        ], (err, result) => {
+            email,
+            false,
+            verificationCode
+        ],
+        (err, result) => {
+
             if (err) {
                 console.log(err);
-                return res.status(500).send("Error registering user");
+
+                return res
+                    .status(500)
+                    .send(
+                        "Error registering user"
+                    );
             }
 
-            res.send("User registered successfully");
-        });
+            res.json({
+                message: "User registered successfully",
+                code: verificationCode,
+            });
+        }
+    );
 });
 
 app.post('/login', (req, res) => {
