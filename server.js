@@ -101,6 +101,41 @@ app.post('/register', (req, res) => {
     );
 });
 
+app.post('/verify-account', (req, res) => {
+
+    const { email, code } = req.body;
+
+    const sql = `
+        UPDATE users
+        SET verified = true
+        WHERE email = ?
+        AND verification_code = ?
+    `;
+
+    db.query(
+        sql, [email, code],
+        (err, result) => {
+
+            if (err) {
+                console.log(err);
+                return res
+                    .status(500)
+                    .send('Database error');
+            }
+
+            if (result.affectedRows === 0) {
+                return res
+                    .status(400)
+                    .send('Invalid code');
+            }
+
+            res.send(
+                'Account verified'
+            );
+        }
+    );
+});
+
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
@@ -113,6 +148,11 @@ app.post('/login', (req, res) => {
         }
 
         if (result.length > 0) {
+            if (!result[0].verified) {
+                return res.status(403).json({
+                    message: 'Please verify your account first'
+                });
+            }
             res.json({
                 message: "Login successful",
                 user: result[0]
