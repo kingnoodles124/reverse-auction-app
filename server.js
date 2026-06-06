@@ -15,10 +15,10 @@ console.log("PORT:", process.env.DB_PORT);
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-    host: 'sql.freedb.tech',
-    user: 'u_ymuwps',
-    password: 'O8yIqa5UZZLV',
-    database: 'freedb_R9BTAh9R',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     port: process.env.DB_PORT
 });
 
