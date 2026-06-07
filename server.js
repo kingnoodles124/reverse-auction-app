@@ -48,7 +48,8 @@ app.post('/register', (req, res) => {
         password,
         role,
         category,
-        email
+        email,
+        license
     } = req.body;
 
     const verificationCode =
@@ -66,9 +67,11 @@ app.post('/register', (req, res) => {
         category,
         email,
         verified,
-        verification_code
+        verification_code,
+        business_license,
+        verification_status
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query(
@@ -79,7 +82,11 @@ app.post('/register', (req, res) => {
             category,
             email,
             false,
-            verificationCode
+            verificationCode,
+            license,
+            role === 'seller' ?
+            'pending' :
+            'approved'
         ],
         (err, result) => {
 
