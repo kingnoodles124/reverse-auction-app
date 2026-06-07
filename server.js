@@ -447,7 +447,13 @@ app.post('/chatbot', async(req, res) => {
             uuid.v4();
 
         const sessionClient =
-            new dialogflow.SessionsClient();
+            new dialogflow.SessionsClient({
+                credentials: {
+                    client_email: process.env.DIALOGFLOW_CLIENT_EMAIL,
+                    private_key: process.env.DIALOGFLOW_PRIVATE_KEY ?
+                        .replace(/\\n/g, '\n'),
+                },
+            });
 
         const sessionPath =
             sessionClient.projectAgentSessionPath(
